@@ -1,3 +1,4 @@
+/*Navigation bar styling*/
 body{
     margin: 0;
 }
@@ -35,3 +36,48 @@ header{
 .navbar li{
     float: left;
 }
+
+/*Link styling*/
+.linktxt: {
+    color: hsl(0, 100%, 55%);
+}
+
+.linktxt:hover{
+    color: hsl(0, 100%, 65%);
+    font-size: 1.1em;
+}
+
+.linktxt:active{
+    color: hsl(0, 100%, 45%);
+    font-size: 1.1em;
+}
+
+.linktxt:visited{
+    color: rgb(152, 151, 151);
+}
+
+/*Button styling*/
+button{
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(120, 120, 120);
+    color: white;
+
+}
+
+button:hover{
+    border: none;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 57%);
+    color: white;
+    font-size: 1.1em;
+}
+
+button:active{
+    border: none;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 37%);
+    color: white;
+    font-size: 1.1em;
+}
+
