@@ -31,3 +31,36 @@
 
   // Initialize
   updateDateDisplay();
+
+  // Category Filter Function
+document.getElementById('categoryFilter').addEventListener('change', function() {
+  const selectedCategory = this.value;
+  
+  // Get all rows and headers
+  const studyRoomRows = document.querySelectorAll('.study-room-row');
+  const equipmentRows = document.querySelectorAll('.equipment-row');
+  const studyRoomsHeader = document.querySelector('.study-rooms-header');
+  const equipmentHeader = document.querySelector('.equipment-header');
+  
+  if (selectedCategory === 'all') {
+    // Show everything
+    studyRoomRows.forEach(row => row.style.display = '');
+    equipmentRows.forEach(row => row.style.display = '');
+    studyRoomsHeader.style.display = '';
+    equipmentHeader.style.display = '';
+    
+  } else if (selectedCategory === 'study-rooms') {
+    // Show only study rooms
+    studyRoomRows.forEach(row => row.style.display = '');
+    equipmentRows.forEach(row => row.style.display = 'none');
+    studyRoomsHeader.style.display = '';
+    equipmentHeader.style.display = 'none';
+    
+  } else if (selectedCategory === 'equipment') {
+    // Show only equipment
+    studyRoomRows.forEach(row => row.style.display = 'none');
+    equipmentRows.forEach(row => row.style.display = '');
+    studyRoomsHeader.style.display = 'none';
+    equipmentHeader.style.display = '';
+  }
+});

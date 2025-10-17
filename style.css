@@ -14,9 +14,13 @@ main{
     margin: 10px;
 }
 header{
-    background-color:hsl(10, 94%, 55%);
+    background-color:hsl(10, 93%, 40%);
     text-align: center;
     padding: 10px;
+    height: 150px;
+    font-size: 3rem;
+
+
 }
 
 .navbar ul{
@@ -43,6 +47,56 @@ header{
 
 .navbar li{
     float: left;
+}
+
+/* FILTER SECTION */
+.filter-section {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.filter-dropdown {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  min-width: 200px;
+  transition: border-color 0.3s;
+}
+
+.filter-dropdown:hover {
+  border-color: #999;
+}
+
+.filter-dropdown:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* CATEGORY HEADERS */
+.category-header {
+  background-color: #e9ecef;
+  font-weight: bold;
+  text-align: left;
+  padding: 12px 8px;
+  color: #495057;
+  border-top: 2px solid #dee2e6;
 }
 
 /*CALENDAR STYLE*/
@@ -167,7 +221,6 @@ header{
     .time-slot {
       width: 40px;
       height: 40px;
-      cursor: pointer;
       transition: opacity 0.3s;
       position: relative;
     }
@@ -179,6 +232,7 @@ header{
     /* STATUS COLORS */
     .available {
       background-color: #28a745;
+      cursor: pointer;
     }
 
     .unavailable {
@@ -190,10 +244,12 @@ header{
         rgba(255,255,255,0.1) 5px,
         rgba(255,255,255,0.1) 10px
       );
+      cursor: not-allowed;
     }
 
     .your-booking {
       background-color: #ffc107;
+      cursor:pointer;
     }
 
     /* LEGEND */
