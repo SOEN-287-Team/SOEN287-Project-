@@ -1,26 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Campus Resource</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-                <h1>Campus Resource</h1>
-        </header>
-        <nav class = "navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="browse-resources.html">Browse Resourses</a></li>
-                <li><a href="booking.html">My Booking</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="login.html">Login/Logout</a></li>
-            </ul>
-        </nav>
+<head>
+    <meta charset="UTF-8">
+    <title>Campus Resource - Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Campus Resource</h1>
+    </header>
 
-        <main>
-            <h2>Profile page</h2>
-            
-        </main>
-    </body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse-resources.html">Browse Resources</a></li>
+            <li><a href="booking.html">My Booking</a></li>
+            <li><a href="profile.html" class="active">Profile</a></li>
+            <li><a href="login.html">Login/Logout</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="calendar-container">
+            <h2 style="margin-bottom: 20px;">My Profile</h2>
+
+            <!-- User info -->
+            <div class="profile-section">
+                <div class="profile-row">
+                    <strong>Name:</strong>  Eliot Farmer
+                </div>
+                <div class="profile-row">
+                    <strong>Email:</strong> eliot.farmer@example.com
+                </div>
+                <div class="profile-row">
+                    <strong>Student ID:</strong> 12345678
+                </div>
+                <div class="profile-row">
+                    <strong>Major:</strong> Software Engineering
+                </div>
+                <div class="profile-row">
+                    <strong>Year:</strong> 2
+                </div>
+            </div>
+
+            <!-- Change password section -->
+            <div class="profile-section" style="margin-top: 30px;">
+                <h3>Change Password</h3>
+                <form>
+                    <div class="profile-row">
+                        <label for="currentPassword">Current Password:</label>
+                        <input type="password" id="currentPassword" placeholder="Enter current password">
+                    </div>
+                    <div class="profile-row">
+                        <label for="newPassword">New Password:</label>
+                        <input type="password" id="newPassword" placeholder="Enter new password">
+                    </div>
+                    <div class="profile-row">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirm new password">
+                    </div>
+                    <button type="submit" style="margin-top: 15px;">Update Password</button>
+                </form>
+            </div>
+
+            <!-- Booking summary -->
+            <div class="profile-section" style="margin-top: 30px;">
+                <h3>My Bookings</h3>
+                <table class="availability-table">
+                    <thead>
+                        <tr>
+                            <th>Space</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Study Room A - Library</td>
+                            <td>2025-10-16</td>
+                            <td>5:00pm - 7:00pm</td>
+                        </tr>
+                        <tr>
+                            <td>Study Room D - Library</td>
+                            <td>2025-10-16</td>
+                            <td>2:00pm - 4:00pm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Cancel booking section -->
+            <div class="profile-section" style="margin-top: 30px;">
+                <h3>Cancel a Booking</h3>
+                <form>
+                    <div class="profile-row">
+                        <label for="bookingSelect">Select Booking to Cancel:</label>
+                        <select id="bookingSelect">
+                            <option value="all">Show All</option>
+                            <option value="booking1">Study Room A - Library on 2025-10-16 at 5:00pm - 7:00pm</option>
+                            <option value="booking2">Study Room D - Library on 2025-10-16 at 2:00pm - 4:00pm</option>
+                        </select>
+                    </div>
+                    <button type="submit" style="margin-top: 15px;">Cancel Booking</button>
+                </form>
+            </div>
+
+            <!-- Delete account section -->
+            <div class="profile-section" style="margin-top: 30px;">
+                <h3>Delete Account</h3>
+                <form>
+                    <p>If you wish to delete your account, please click the button below. This action is irreversible.</p>
+                    <button style="background-color: rgb(221, 216, 216); color: rgb(243, 4, 4); margin-top: 10px;">Delete My Account</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
 </html>
