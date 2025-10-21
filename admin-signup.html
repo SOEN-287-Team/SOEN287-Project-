@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Campus Resource</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+                <h1>Campus Resource</h1>
+        </header>
+        <nav class = "navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse-resources.html">Browse Resourses</a></li>
+                <li><a href="booking.html">My Booking</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="login.html">Login/Logout</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h2>Sign up as an Admin</h2>
+            <br><br>
+            <div class="signupdiv">
+                <form id="adminSignUpForm">
+                    <br>
+                    <label for="adminFirstName">Enter your first name:</label>
+                    <input type="text" id="adminFirstName" name="adminFirstName" required>
+                    <br><br>
+                    <label for="adminLastName">Enter your last name:</label>
+                    <input type="text" id="adminLastName" name="adminLastName" required>
+                    <br><br>
+                    <label for="email">Enter your admin email address:</label>
+                    <input type="email" id="adminEmail" name="adminEmail" required>
+                    <br><br>
+                    <label for="password">Enter a password:</label>
+                    <input type="password" id="Password" name="Password" required>
+                    <br><br>
+                    <label for="confirmPassword">Confirm your password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <br><br>
+                    <button class="signupbutton" type="submit">Submit</button>
+
+                </form>
+                <br><br>
+            </div> 
+            
+        </main>
+        <script src="js/admin-signup.js"></script>
+    </body>
+</html>

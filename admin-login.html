@@ -19,19 +19,21 @@
         </nav>
 
         <main>
-            <div class="logintype">
-                <h4>Select Login Type</h4>
-                <br>
-                <label>
-                    <input type="radio" name="userType" value="student"> Student
-                </label>
-                
-                <label>
-                    <input type="radio" name="userType" value="admin"> Admin
-                </label>
+            <h2>Admin</h2>
+            <br><br>
+            <div class="logindiv">
+                <form id="loginform">
+                    <label for="email">Admin Email:</label>
+                    <input type="email" id="adminEmail" name="adminEmail" required> 
+                    <br><br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="adminPassword" name="adminPassword" required>
+                    <br><br>
+                    <button class="loginbutton" type="submit">Login</button>
+                </form>
                 <br><br>
-                <button id="continueButton">Continue</button>
-            </div>  
+                <p class="promptsignup">Click <a href="admin-signup.html">here</a> to sign up.</p>
+            </div> 
             
         </main>
         <script src="js/login.js"></script>
