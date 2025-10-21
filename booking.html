@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Campus Resource</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+                <h1>Campus Resource</h1>
+        </header>
+        <nav class = "navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse-resources.html">Browse Resourses</a></li>
+                <li><a href="booking.html">My Booking</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="login.html">Login/Logout</a></li>
+            </ul>
+        </nav>
+
+        <main>
+          <!-- CATEGORY FILTER -->
+            <div class="filter-section">
+              <div class="filter-group">
+                <label for="categoryFilter">Category:</label>
+                <select id="categoryFilter" class="filter-dropdown">
+                  <option value="all">Show All</option>
+                  <option value="study-rooms">Group Study Rooms</option>
+                  <option value="equipment">Computer Workstations</option>
+                </select>
+              </div>
+            </div>
+
+          <!--DATE HEADER WITH CONTROLS-->
+            <div class="date-header">
+                <div class="current-date" id="currentDate"> Thursday, October 16, 2025</div>
+                <div class="date-controls">
+                    <input type="date" id="datePicker" class="date-picker-input" value="2025-10-16">
+                    <button class="nav-btn" onclick="changeDate(-1)" title="Previous Day">‹</button>
+                    <button class="nav-btn" onclick="changeDate(1)" title="Next Day">›</button>
+                </div>
+            </div>
+            
+          <!--AVAILABILITY TABLE-->
+            <table class="availability-table">
+                <thead>
+                    <tr>
+                        <th>Space</th>
+                        <th>10:00am</th>
+                        <th>11:00am</th>
+                        <th>12:00pm</th>
+                        <th>1:00pm</th>
+                        <th>2:00pm</th>
+                        <th>3:00pm</th>
+                        <th>4:00pm</th>
+                        <th>5:00pm</th>
+                        <th>6:00pm</th>
+                        <th>7:00pm</th>
+                        <th>8:00pm</th>
+                        <th>9:00pm</th>
+                    </tr>
+                </thead>
+                <tbody>
+        <!-- STUDY ROOMS GROUP HEADER -->
+        <tr class="category-header study-rooms-header">
+          <td colspan="13">
+            <h3>📚 Group Study Rooms</h3>
+          </td>
+        </tr>
+
+        <!-- STUDY ROOM 1 -->
+        <tr class="study-room-row" data-category="study-rooms">
+          <td>
+            <div class="resource-name">
+              <span class="resource-icon">SR</span>
+              Study Room A - Library
+            </div>
+          </td>
+          <td><div class="time-slot unavailable" data-time="10:00am"></div></td>
+          <td><div class="time-slot unavailable" data-time="11:00am"></div></td>
+          <td><div class="time-slot unavailable" data-time="12:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="1:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="2:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="3:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="4:00pm"></div></td>
+          <td><div class="time-slot your-booking" data-time="5:00pm"></div></td>
+          <td><div class="time-slot your-booking" data-time="6:00pm"></div></td>
+          <td><div class="time-slot available" data-time="7:00pm"></div></td>
+          <td><div class="time-slot available" data-time="8:00pm"></div></td>
+          <td><div class="time-slot available" data-time="9:00pm"></div></td>
+        </tr>
+
+        <!-- STUDY ROOM 2 -->
+        <tr class="study-room-row" data-category="study-rooms">
+          <td>
+            <div class="resource-name">
+              <span class="resource-icon">SR</span>
+              Study Room B - Library
+            </div>
+          </td>
+          <td><div class="time-slot unavailable" data-time="10:00am"></div></td>
+          <td><div class="time-slot unavailable" data-time="11:00am"></div></td>
+          <td><div class="time-slot unavailable" data-time="12:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="1:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="2:00pm"></div></td>
+          <td><div class="time-slot available" data-time="3:00pm"></div></td>
+          <td><div class="time-slot available" data-time="4:00pm"></div></td>
+          <td><div class="time-slot available" data-time="5:00pm"></div></td>
+          <td><div class="time-slot available" data-time="6:00pm"></div></td>
+          <td><div class="time-slot available" data-time="7:00pm"></div></td>
+          <td><div class="time-slot available" data-time="8:00pm"></div></td>
+          <td><div class="time-slot available" data-time="9:00pm"></div></td>
+        </tr>
+
+        <!-- STUDY ROOM 3 -->
+        <tr class="study-room-row" data-category="study-rooms">
+          <td>
+            <div class="resource-name">
+              <span class="resource-icon">SR</span>
+              Study Room C - Library
+            </div>
+          </td>
+          <td><div class="time-slot unavailable" data-time="10:00am"></div></td>
+          <td><div class="time-slot unavailable" data-time="11:00am"></div></td>
+          <td><div class="time-slot unavailable" data-time="12:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="1:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="2:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="3:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="4:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="5:00pm"></div></td>
+          <td><div class="time-slot available" data-time="6:00pm"></div></td>
+          <td><div class="time-slot available" data-time="7:00pm"></div></td>
+          <td><div class="time-slot available" data-time="8:00pm"></div></td>
+          <td><div class="time-slot available" data-time="9:00pm"></div></td>
+        </tr>
+
+        <!-- STUDY ROOM 4 -->
+        <tr class="study-room-row" data-category="study-rooms">
+          <td>
+            <div class="resource-name">
+              <span class="resource-icon">SR</span>
+              Study Room D - Library
+            </div>
+          </td>
+          <td><div class="time-slot unavailable" data-time="10:00am"></div></td>
+          <td><div class="time-slot unavailable" data-time="11:00am"></div></td>
+          <td><div class="time-slot unavailable" data-time="12:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="1:00pm"></div></td>
+          <td><div class="time-slot your-booking" data-time="2:00pm"></div></td>
+          <td><div class="time-slot your-booking" data-time="3:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="4:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="5:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="6:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="7:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="8:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="9:00pm"></div></td>
+        </tr>
+
+        <!-- EQUIPMENT GROUP HEADER -->
+        <tr class="category-header equipment-header">
+          <td colspan="13">
+            <h3>💻 Computer Workstations</h3>
+          </td>
+        </tr>
+
+        <!-- EQUIPMENT 1 -->
+        <tr class="equipment-row" data-category="equipment">
+          <td>
+            <div class="resource-name">
+              <span class="resource-icon">CW</span>
+              Computer Workstation 1
+            </div>
+          </td>
+          <td><div class="time-slot unavailable" data-time="10:00am"></div></td>
+          <td><div class="time-slot unavailable" data-time="11:00am"></div></td>
+          <td><div class="time-slot unavailable" data-time="12:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="1:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="2:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="3:00pm"></div></td>
+          <td><div class="time-slot available" data-time="4:00pm"></div></td>
+          <td><div class="time-slot available" data-time="5:00pm"></div></td>
+          <td><div class="time-slot available" data-time="6:00pm"></div></td>
+          <td><div class="time-slot available" data-time="7:00pm"></div></td>
+          <td><div class="time-slot available" data-time="8:00pm"></div></td>
+          <td><div class="time-slot available" data-time="9:00pm"></div></td>
+        </tr>
+
+        <!-- EQUIPMENT 2 -->
+        <tr class="equipment-row" data-category="equipment">
+          <td>
+            <div class="resource-name">
+              <span class="resource-icon">CW</span>
+              Computer Workstation 2
+            </div>
+          </td>
+          <td><div class="time-slot available" data-time="10:00am"></div></td>
+          <td><div class="time-slot available" data-time="11:00am"></div></td>
+          <td><div class="time-slot available" data-time="12:00pm"></div></td>
+          <td><div class="time-slot available" data-time="1:00pm"></div></td>
+          <td><div class="time-slot available" data-time="2:00pm"></div></td>
+          <td><div class="time-slot available" data-time="3:00pm"></div></td>
+          <td><div class="time-slot available" data-time="4:00pm"></div></td>
+          <td><div class="time-slot available" data-time="5:00pm"></div></td>
+          <td><div class="time-slot available" data-time="6:00pm"></div></td>
+          <td><div class="time-slot available" data-time="7:00pm"></div></td>
+          <td><div class="time-slot available" data-time="8:00pm"></div></td>
+          <td><div class="time-slot available" data-time="9:00pm"></div></td>
+        </tr>
+
+        <!-- EQUIPMENT 3 -->
+        <tr class="equipment-row" data-category="equipment">
+          <td>
+            <div class="resource-name">
+              <span class="resource-icon">CW</span>
+              Computer Workstation 3
+            </div>
+          </td>
+          <td><div class="time-slot available" data-time="10:00am"></div></td>
+          <td><div class="time-slot available" data-time="11:00am"></div></td>
+          <td><div class="time-slot available" data-time="12:00pm"></div></td>
+          <td><div class="time-slot available" data-time="1:00pm"></div></td>
+          <td><div class="time-slot available" data-time="2:00pm"></div></td>
+          <td><div class="time-slot available" data-time="3:00pm"></div></td>
+          <td><div class="time-slot available" data-time="4:00pm"></div></td>
+          <td><div class="time-slot available" data-time="5:00pm"></div></td>
+          <td><div class="time-slot available" data-time="6:00pm"></div></td>
+          <td><div class="time-slot available" data-time="7:00pm"></div></td>
+          <td><div class="time-slot available" data-time="8:00pm"></div></td>
+          <td><div class="time-slot available" data-time="9:00pm"></div></td>
+        </tr>
+
+        <!-- EQUIPMENT 4 -->
+        <tr class="equipment-row" data-category="equipment">
+          <td>
+            <div class="resource-name">
+              <span class="resource-icon">CW</span>
+              Computer Workstation 4
+            </div>
+          </td>
+          <td><div class="time-slot unavailable" data-time="10:00am"></div></td>
+          <td><div class="time-slot unavailable" data-time="11:00am"></div></td>
+          <td><div class="time-slot unavailable" data-time="12:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="1:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="2:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="3:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="4:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="5:00pm"></div></td>
+          <td><div class="time-slot unavailable" data-time="6:00pm"></div></td>
+          <td><div class="time-slot available" data-time="7:00pm"></div></td>
+          <td><div class="time-slot available" data-time="8:00pm"></div></td>
+          <td><div class="time-slot available" data-time="9:00pm"></div></td>
+        </tr>
+
+            </tbody>
+            
+            </table>
+
+        <!-- LEGEND -->
+        <div class="legend">
+        <div class="legend-item">
+            <div class="legend-color available"></div>
+            <span>Available</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color your-booking"></div>
+            <span>Your Booking</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color unavailable"></div>
+            <span>Unavailable</span>
+        </div>
+        </div>
+
+    </div>
+
+            
+        </main>
+        <script type="text/javaScript" src="js\booking.js"></script>
+  
+    </body>
+</html>
