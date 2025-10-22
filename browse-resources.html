@@ -18,9 +18,80 @@
             </ul>
         </nav>
 
-        <main>
-            <h2>Resource list</h2>
-            
-        </main>
+        <style>
+    .resources-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+    .resource-card img {
+        max-width: 300px;
+        height: 200px;
+    }
+    </style>
+<body>
+
+    <main class="resources-container">
+
+        <!-- Group Study Rooms -->
+        <div class="resource-card">
+            <h2>Study Room A</h2>
+            <img src="imageA.png" alt="Study Room A">
+            <p>Quiet room suitable for both individual and study with a partner.</p>
+            <a href="booking.html" class="book-btn">Book</a>
+        </div>
+
+        <div class="resource-card">
+            <h2>Study Room B</h2>
+            <img src="imageB.png" alt="Study Room B">
+            <p>Spacious room for 6. Ideal for group discussions.</p>
+            <a href="booking.html" class="book-btn">Book</a>
+        </div>
+
+        <div class="resource-card">
+            <h2>Study Room C</h2>
+            <img src="image.png" alt="Study Room C">
+            <p>Group of 4-6 students can collaborate here with whiteboard and screen.</p>
+            <a href="booking.html" class="book-btn">Book</a>
+        </div>
+
+        <div class="resource-card">
+            <h2>Study Room D</h2>
+            <img src="imageD.jpg" alt="Study Room D">
+            <p>Comfortable and private study space for individual work.</p>
+            <a href="booking.html" class="book-btn">Book</a>
+        </div>
+
+        <!-- Computer Workstations -->
+        <div class="resource-card">
+            <h2>Computer Workstation 1</h2>
+            <img src="StudyroomA.jpg" alt="Workstation 1">
+            <p>Equipped with high-speed internet and dual monitors for research or coding.</p>
+            <a href="booking.html" class="book-btn">Book</a>
+        </div>
+
+        <div class="resource-card">
+            <h2>Computer Workstation 2</h2>
+            <img src="StudyroomB.jpg" alt="Workstation 2">
+            <p>Ergonomic setup with Windows OS and software preinstalled for coursework.</p>
+            <a href="booking.html" class="book-btn">Book</a>
+        </div>
+
+        <div class="resource-card">
+            <h2>Computer Workstation 3</h2>
+            <img src="StudyroomC.jpg" alt="Workstation 3">
+            <p>Dell workstation equipped for creative design and software development.</p>
+            <a href="booking.html" class="book-btn">Book</a>
+        </div>
+
+        <div class="resource-card">
+            <h2>Computer Workstation 4</h2>
+            <img src="StudyroomD.jpg" alt="Workstation 4">
+            <p>Quiet workstation area ideal for focused and individual computer-based tasks.</p>
+            <a href="booking.html" class="book-btn">Book</a>
+        </div>
+
+    </main>
     </body>
 </html>
