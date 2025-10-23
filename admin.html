@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Resource</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+       <h2>Campus Resource</h2>
+    </header>
+    <nav class = "navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse-resources.html">Browse Resourses</a></li>
+                <li><a href="booking.html">My Booking</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="login.html">Login/Logout</a></li>
+            </ul>
+        </nav>
+    <main>
+        <!-- STATISTICS SECTION -->
+  <div class="calendar-container">
+    <div class="date-header">
+      <div class="current-date">📊 Admin Dashboard</div>
+      <div class="date-controls">
+        <button class="btn-primary">+ Add Resource</button>
+      </div>
+    </div>
+
+    <!-- STATS CARDS -->
+    <div class="stats-grid">
+      
+      <div class="stat-card">
+        <div class="stat-icon">📚</div>
+        <h3>Total Resources</h3>
+        <div class="stat-number">24</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">📅</div>
+        <h3>Active Bookings</h3>
+        <div class="stat-number">156</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">⏳</div>
+        <h3>Pending</h3>
+        <div class="stat-number">7</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">👥</div>
+        <h3>Total Users</h3>
+        <div class="stat-number">342</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESOURCE MANAGEMENT SECTION -->
+  <div class="calendar-container">
+    <div class="filter-section">
+      <div class="filter-group">
+        <div class="current-date">📚 Manage Resources</div>
+        <button class="btn-primary" onclick="toggleForm()">+ Add New Resource</button>
+      </div>
+    </div>
+
+    <!-- ADD/EDIT RESOURCE FORM -->
+    <div class="form-section" id="resourceForm">
+      <h3 style="margin-bottom: 20px;">Add New Resource</h3>
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="resourceName">Resource Name *</label>
+            <input type="text" id="resourceName" class="form-input" placeholder="e.g., Study Room A" required>
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category *</label>
+            <select id="category" class="form-select" required>
+              <option value="">Select category</option>
+              <option value="study-room">Study Room</option>
+              <option value="lab">Computer Lab</option>
+              <option value="meeting-room">Meeting Room</option>
+              <option value="equipment">Equipment</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="location">Location *</label>
+            <input type="text" id="location" class="form-input" placeholder="e.g., Library Building, 2nd Floor" required>
+          </div>
+
+          <div class="form-group">
+            <label for="capacity">Capacity *</label>
+            <input type="number" id="capacity" class="form-input" placeholder="Number of people" min="1" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description *</label>
+          <textarea id="description" class="form-textarea" placeholder="Describe the resource, amenities, rules..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="image">Resource Image (Optional)</label>
+          <input type="file" id="image" class="form-input" accept="image/*">
+        </div>
+
+        <h3 style="margin: 30px 0 15px 0;">⏰ Availability Schedule</h3>
+
+        <div class="form-group">
+          <label>Available Days *</label>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" checked> Monday
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" checked> Tuesday
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" checked> Wednesday
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" checked> Thursday
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" checked> Friday
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox"> Saturday
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox"> Sunday
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="openTime">Opening Time *</label>
+            <input type="time" id="openTime" class="form-input" value="08:00" required>
+          </div>
+
+          <div class="form-group">
+            <label for="closeTime">Closing Time *</label>
+            <input type="time" id="closeTime" class="form-input" value="22:00" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="blackoutDates">Blackout Dates (Optional)</label>
+          <input type="text" id="blackoutDates" class="form-input" placeholder="e.g., Dec 24-26, Jan 1">
+          <small style="color: #666;">Enter dates when this resource will be unavailable</small>
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn-primary">💾 Save Resource</button>
+          <button type="button" class="btn-secondary" onclick="toggleForm()">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- RESOURCE CARDS -->
+    <div class="resource-grid">
+
+      <!-- Resource 1: Available -->
+      <div class="resource-card">
+        <div class="resource-image">📚</div>
+        <div class="resource-content">
+          <h3>Study Room A</h3>
+          <div class="resource-info">
+            <span>📍 Library Building, 2nd Floor</span>
+            <span>👥 Capacity: 4 people</span>
+            <span>⏰ Mon-Fri: 8:00 AM - 10:00 PM</span>
+          </div>
+          <span class="resource-status status-available">✓ Available</span>
+          <div class="resource-actions">
+            <button class="btn-small btn-edit">✏️ Edit</button>
+            <button class="btn-small btn-block">🚫 Block</button>
+            <button class="btn-small btn-delete">🗑️ Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resource 2: Available -->
+      <div class="resource-card">
+        <div class="resource-image">💻</div>
+        <div class="resource-content">
+          <h3>Computer Lab</h3>
+          <div class="resource-info">
+            <span>📍 Engineering Building, Room 201</span>
+            <span>👥 Capacity: 20 people</span>
+            <span>⏰ Mon-Sun: 9:00 AM - 11:00 PM</span>
+          </div>
+          <span class="resource-status status-available">✓ Available</span>
+          <div class="resource-actions">
+            <button class="btn-small btn-edit">✏️ Edit</button>
+            <button class="btn-small btn-block">🚫 Block</button>
+            <button class="btn-small btn-delete">🗑️ Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resource 3: Blocked -->
+      <div class="resource-card">
+        <div class="resource-image" style="background: linear-gradient(135deg, #6c757d 0%, #495057 100%);">🚫</div>
+        <div class="resource-content">
+          <h3>Meeting Room A</h3>
+          <div class="resource-info">
+            <span>📍 Student Center, 3rd Floor</span>
+            <span>👥 Capacity: 8 people</span>
+            <span>⏰ Mon-Fri: 8:00 AM - 6:00 PM</span>
+          </div>
+          <span class="resource-status status-blocked">🚫 Blocked</span>
+          <div class="resource-actions">
+            <button class="btn-small btn-edit">✏️ Edit</button>
+            <button class="btn-small btn-unblock">✓ Unblock</button>
+            <button class="btn-small btn-delete">🗑️ Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resource 4: Maintenance -->
+      <div class="resource-card">
+        <div class="resource-image" style="background: linear-gradient(135deg, #ffc107 0%, #ff8c00 100%);">🔧</div>
+        <div class="resource-content">
+          <h3>Lab Equipment #1</h3>
+          <div class="resource-info">
+            <span>📍 Science Building, Lab 102</span>
+            <span>👥 Capacity: 4 people</span>
+            <span>⏰ Mon-Fri: 9:00 AM - 5:00 PM</span>
+          </div>
+          <span class="resource-status status-maintenance">🔧 Maintenance</span>
+          <div class="resource-actions">
+            <button class="btn-small btn-edit">✏️ Edit</button>
+            <button class="btn-small btn-unblock">✓ Unblock</button>
+            <button class="btn-small btn-delete">🗑️ Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resource 5: Available -->
+      <div class="resource-card">
+        <div class="resource-image">📚</div>
+        <div class="resource-content">
+          <h3>Study Room B</h3>
+          <div class="resource-info">
+            <span>📍 Library Building, 1st Floor</span>
+            <span>👥 Capacity: 6 people</span>
+            <span>⏰ Mon-Fri: 8:00 AM - 10:00 PM</span>
+          </div>
+          <span class="resource-status status-available">✓ Available</span>
+          <div class="resource-actions">
+            <button class="btn-small btn-edit">✏️ Edit</button>
+            <button class="btn-small btn-block">🚫 Block</button>
+            <button class="btn-small btn-delete">🗑️ Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resource 6: Available -->
+      <div class="resource-card">
+        <div class="resource-image">🏢</div>
+        <div class="resource-content">
+          <h3>Meeting Room B</h3>
+          <div class="resource-info">
+            <span>📍 Student Center, 3rd Floor</span>
+            <span>👥 Capacity: 10 people</span>
+            <span>⏰ Mon-Fri: 8:00 AM - 8:00 PM</span>
+          </div>
+          <span class="resource-status status-available">✓ Available</span>
+          <div class="resource-actions">
+            <button class="btn-small btn-edit">✏️ Edit</button>
+            <button class="btn-small btn-block">🚫 Block</button>
+            <button class="btn-small btn-delete">🗑️ Delete</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PENDING APPROVALS SECTION -->
+  <div class="calendar-container">
+    <div class="date-header">
+      <div class="current-date">⏳ Pending Approvals</div>
+      <div class="date-controls">
+        <span style="color: #666;">7 bookings awaiting approval</span>
+      </div>
+    </div>
+
+    <table class="approval-table">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Resource</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>John Smith</strong><br><small>Student</small></td>
+          <td>Study Room A</td>
+          <td>Oct 20, 2025</td>
+          <td>2:00 PM - 4:00 PM</td>
+          <td><span class="resource-status status-maintenance">Pending</span></td>
+          <td>
+            <button class="btn-small btn-unblock">✓ Approve</button>
+            <button class="btn-small btn-delete">✗ Reject</button>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Sarah Johnson</strong><br><small>Faculty</small></td>
+          <td>Computer Lab</td>
+          <td>Oct 21, 2025</td>
+          <td>10:00 AM - 12:00 PM</td>
+          <td><span class="resource-status status-maintenance">Pending</span></td>
+          <td>
+            <button class="btn-small btn-unblock">✓ Approve</button>
+            <button class="btn-small btn-delete">✗ Reject</button>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Mike Chen</strong><br><small>Student</small></td>
+          <td>Meeting Room B</td>
+          <td>Oct 22, 2025</td>
+          <td>3:00 PM - 5:00 PM</td>
+          <td><span class="resource-status status-maintenance">Pending</span></td>
+          <td>
+            <button class="btn-small btn-unblock">✓ Approve</button>
+            <button class="btn-small btn-delete">✗ Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- MOST POPULAR RESOURCES - BAR CHART SECTION -->
+<div class="calendar-container">
+  <div class="date-header">
+    <div class="current-date">📊 Most Popular Resources</div>
+    <div class="date-controls">
+      <select class="filter-dropdown">
+        <option>This Month</option>
+        <option>Last Month</option>
+        <option>This Year</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Bar Chart using existing table structure -->
+  <table class="availability-table stats-table">
+    <thead>
+      <tr>
+        <th class="text-left">Resource</th>
+        <th>Bookings</th>
+        <th>Utilization</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>Study Room A</strong><br>
+          <small class="text-muted">Library Building</small>
+        </td>
+        <td class="text-center">156 bookings</td>
+        <td class="progress-cell">
+          <div class="progress-track">
+            <div class="progress-bar bar-high">
+              92%
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <strong>Computer Lab</strong><br>
+          <small class="text-muted">Engineering Building</small>
+        </td>
+        <td class="text-center">142 bookings</td>
+        <td class="progress-cell">
+          <div class="progress-track">
+            <div class="progress-bar bar-high" style="width: 85%;">
+              85%
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <strong>Meeting Room B</strong><br>
+          <small class="text-muted">Student Center</small>
+        </td>
+        <td class="text-center">128 bookings</td>
+        <td class="progress-cell">
+          <div class="progress-track">
+            <div class="progress-bar bar-high" style="width: 78%;">
+              78%
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <strong>Study Room C</strong><br>
+          <small class="text-muted">Library Building</small>
+        </td>
+        <td class="text-center">98 bookings</td>
+        <td class="progress-cell">
+          <div class="progress-track">
+            <div class="progress-bar bar-medium" style="width: 65%;">
+              65%
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <strong>Lab Equipment</strong><br>
+          <small class="text-muted">Science Building</small>
+        </td>
+        <td class="text-center">75 bookings</td>
+        <td class="progress-cell">
+          <div class="progress-track">
+            <div class="progress-bar bar-medium" style="width: 52%;">
+              52%
+            </div>
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<!-- RESOURCE UTILIZATION THIS WEEK SECTION -->
+<div class="calendar-container">
+  <div class="date-header">
+    <div class="current-date">📈 Resource Utilization This Week</div>
+    <div class="date-controls">
+      <span class="text-muted">Oct 14 - Oct 20, 2025</span>
+    </div>
+  </div>
+
+  <div class="utilization-list">
+
+    <!-- Resource 1 -->
+    <div class="utilization-item">
+      <div class="utilization-header">
+        <div class="utilization-label">
+          <strong>Study Room A</strong>
+          <span class="text-muted text-small"> - Library Building</span>
+        </div>
+        <strong class="percent-high">92%</strong>
+      </div>
+      <div class="utilization-bar-track">
+        <div class="utilization-bar bar-high" style="width: 92%;"></div>
+      </div>
+    </div>
+
+    <!-- Resource 2 -->
+    <div class="utilization-item">
+      <div class="utilization-header">
+        <div class="utilization-label">
+          <strong>Computer Lab</strong>
+          <span class="text-muted text-small"> - Engineering Building</span>
+        </div>
+        <strong class="percent-high">85%</strong>
+      </div>
+      <div class="utilization-bar-track">
+        <div class="utilization-bar bar-high" style="width: 85%;"></div>
+      </div>
+    </div>
+
+    <!-- Resource 3 -->
+    <div class="utilization-item">
+      <div class="utilization-header">
+        <div class="utilization-label">
+          <strong>Meeting Room B</strong>
+          <span class="text-muted text-small"> - Student Center</span>
+        </div>
+        <strong class="percent-high">78%</strong>
+      </div>
+      <div class="utilization-bar-track">
+        <div class="utilization-bar bar-high" style="width: 78%;"></div>
+      </div>
+    </div>
+
+    <!-- Resource 4 -->
+    <div class="utilization-item">
+      <div class="utilization-header">
+        <div class="utilization-label">
+          <strong>Study Room C</strong>
+          <span class="text-muted text-small"> - Library Building</span>
+        </div>
+        <strong class="percent-medium">65%</strong>
+      </div>
+      <div class="utilization-bar-track">
+        <div class="utilization-bar bar-medium" style="width: 65%;"></div>
+      </div>
+    </div>
+
+    <!-- Resource 5 -->
+    <div class="utilization-item">
+      <div class="utilization-header">
+        <div class="utilization-label">
+          <strong>Lab Equipment</strong>
+          <span class="text-muted text-small"> - Science Building</span>
+        </div>
+        <strong class="percent-medium">52%</strong>
+      </div>
+      <div class="utilization-bar-track">
+        <div class="utilization-bar bar-medium" style="width: 52%;"></div>
+      </div>
+    </div>
+
+    <!-- Resource 6 -->
+    <div class="utilization-item">
+      <div class="utilization-header">
+        <div class="utilization-label">
+          <strong>Meeting Room A</strong>
+          <span class="text-muted text-small"> - Student Center</span>
+        </div>
+        <strong class="percent-low">35%</strong>
+      </div>
+      <div class="utilization-bar-track">
+        <div class="utilization-bar bar-low" style="width: 35%;"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Legend at bottom -->
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-color available"></div>
+      <span>High Utilization (75%+)</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color your-booking"></div>
+      <span>Medium Utilization (50-74%)</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color unavailable"></div>
+      <span>Low Utilization (&lt;50%)</span>
+    </div>
+  </div>
+</div>
+    </main>
+</body>
+</html>

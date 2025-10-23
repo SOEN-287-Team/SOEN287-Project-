@@ -6,7 +6,7 @@
     </head>
     <body>
         <header>
-                <h1>Campus Resource</h1>
+                <h2>Campus Resource</h2>
         </header>
         <nav class = "navbar">
             <ul>
@@ -19,12 +19,21 @@
         </nav>
 
         <main>
-            <h2>login page</h2>
+            <div class="logintype">
+                <h4>Select Login Type</h4>
+                <br>
+                <label>
+                    <input type="radio" name="userType" value="student"> Student
+                </label>
+                
+                <label>
+                    <input type="radio" name="userType" value="admin"> Admin
+                </label>
+                <br><br>
+                <button id="continueButton">Continue</button>
+            </div>  
             
         </main>
-        <footer>
-    <p>&copy; 2024 Campus Resource Booking. All rights reserved.</p>
-    <p style="font-size: 0.9rem;">Contact: info@campusresource.edu | Phone: (555) 123-4567</p>
-</footer>
+        <script src="js/login.js"></script>
     </body>
 </html>
