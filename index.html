@@ -1,26 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Campus Resource</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-                <h1>Campus Resource</h1>
-        </header>
-        <nav class = "navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="browse-resources.html">Browse Resourses</a></li>
-                <li><a href="booking.html">My Booking</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="login.html">Login/Logout</a></li>
-            </ul>
-        </nav>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Campus Resource</title>
+</head>
 
-        <main>
-            <h2>Home page</h2>
-            
-        </main>
-    </body>
+<body>
+    <header>
+        <h2>Campus Resource</h2>
+    </header>
+    
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse-resources.html">Browse Resources</a></li>
+            <li><a href="booking.html">My Booking</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="login.html">Login/Logout</a></li>
+            <li>
+                <div class="nav-search">
+                  <form id="navSearchForm" role="search">
+                     <input id="navSearchInput" type="search" placeholder="search..." />
+                     <button type ="submit"aria-label="Search">🔍</button>
+                  </form>
+                </div>
+          </li>
+        </ul>
+    </nav>
+
+    <main class="hero">
+      
+        <section class="hero-main"
+            <h1><b>Welcome to Campus Resource Booking</b></h1>
+            <p>Your one-stop solution for booking campus resources efficiently and conveniently.</p>
+            <h3><strong>Reserve your group study room or computer workstation.</strong></h3>
+            <p><em>Book your spot now!</em></p>
+ 
+
+            <a href="booking.html" class="hero-icons">
+            <img src="group-study.png" alt="Group Study Room"/>
+            <img src="workstations.png" alt="Computer Workstations"/>
+            </a>
+        </section>
+     <aside class="hero-aside">
+       <h2 class="aside-title">Where We're Located</h2>
+        
+       <div class="adress-card">
+          
+                <h3>📍Address</h3>
+                <p>
+                   Pavillion J.W. McConnell Bldg,
+                   1400 Maisonneuve Blvd W, Montreal,
+                   Quebec H3G 1M8, Canada
+                </p>
+        </div>
+           
+            <div class="map-card">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12104.296833793458!2d-73.59709541228203!3d45.49677650000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a6a651ddaad%3A0xb976a7fac75176dc!2sWebster%20Library%2C%20Concordia%20University!5e1!3m2!1sen!2sus!4v1760911015800!5m2!1sen!2sus"
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+               </iframe>
+
+            </div>
+     </aside>
+ </main>
+    <footer>
+        <p>&copy; 2025-2026 Campus Resource Booking. All rights reserved.</p>
+        <p style="font-size: 0.9rem;">Contact: info@campusresource.edu | Phone: (514-848-2424)</p>
+    </footer>
+
+</body>
 </html>
