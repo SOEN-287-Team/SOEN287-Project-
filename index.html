@@ -22,35 +22,63 @@
             <li><a href="login.html">Login/Logout</a></li>
             <li>
                 <div class="nav-search">
-                  <form id="navSearchForm" role="search">
-                     <input id="navSearchInput" type="search" placeholder="search..." />
-                     <button type ="submit"aria-label="Search">🔍</button>
+                  <form id="navSearchForm" action="search.html" method="GET">
+  <input id="navSearchInput" name="q" type="search" placeholder="Search…" />
+  <button type="submit">Search</button>
                   </form>
                 </div>
           </li>
         </ul>
     </nav>
 
+
+
     <main class="hero">
       
-        <section class="hero-main"
-            <h1><b>Welcome to Campus Resource Booking</b></h1>
-            <p>Your one-stop solution for booking campus resources efficiently and conveniently.</p>
-            <h3><strong>Reserve your group study room or computer workstation.</strong></h3>
-            <p><em>Book your spot now!</em></p>
- 
-
-            <a href="booking.html" class="hero-icons">
-            <img src="group-study.png" alt="Group Study Room"/>
-            <img src="workstations.png" alt="Computer Workstations"/>
+        <section class="hero-main">
+            <h1 style="font-size:2.5rem; color:#912338">Welcome to Campus Resource Booking<br></h1>
+<h2 style="font-weight: 300;text-align: center ;">Your one-stop solution for booking campus resources efficiently and conveniently.</h2>
+          
+           <div class="registration-info">
+       <div class="register-prompt"> <h2>Not registered yet?</h2> <h3 style="font-weight: 300;">Students and Admins need register to access booking features.</h3>
+       <br>
+        <a href="student-signup.html" class="register-btn" >Student Registration</a> | <a href="admin-signup.html" class="register-btn" >Admin Registration</a> 
+       </div>
+      
+         </div>
+         <br>
+         <br>
+         <br>
+        <section class="blue-bar">
+           <h2 style="text-align:center;font-size: 2rem;">Book Your Spot Now</h2>
+  <div class="blue-content">
+    
+   
+      
+      <a href="booking.html#group-rooms" class="blue-link">
+        <img src="study.png" alt="Group Study Room" class="blue-img">
+         <h4 style="color: #fff;font-size: 1.35rem;">GROUP STUDY ROOMS</h4>
+      </a>
+      
+      <a href="booking.html#workstations" class="blue-link">
+        <img src="work.png" alt="Computer Workstation" class="blue-img">
+        <h4 style="color: #fff;font-size: 1.35rem;">COMPUTER WORKSTATIONS</h4>
             </a>
+    </div>
+  </div>
+</section>
+
         </section>
+
      <aside class="hero-aside">
-       <h2 class="aside-title">Where We're Located</h2>
+       
+
+
+       <h2 class="aside-title"style="color:#912338">Where We're Located</h2>
         
        <div class="adress-card">
           
-                <h3>📍Address</h3>
+                <h2>📍Address</h2>
                 <p>
                    Pavillion J.W. McConnell Bldg,
                    1400 Maisonneuve Blvd W, Montreal,
@@ -64,12 +92,47 @@
                </iframe>
 
             </div>
+          
+  <br>
+  <div class="rules-box">
+    <h2 style="color:#912338">No Food Please</h2><br>
+    <img src="no-food-icon.png" alt="No food icon" class="rules-icon"><img src="spill-proof-icon.png" alt="No drink icon" class="rules-icon">
+    <br>
+    <br>
+    <h3>
+     Beverages and food are permitted <br>if they are in spill-proof containers.
+    </h3>
+  </div>
+  <br>
+  <br>
+  </div class="news-section">
+  <h2 style="color:#912338">Campus News</h2>
+  <h3 style="font-weight: 200;">Stay updated with the latest news and stories from <br><a href= "https://thelinknewspaper.ca/section/c/news" class="link-btn" style="font-weight: bold;">The Link Newspaper</a> </h3> </div>
+      <section class="rules-section">
+
+</section>
+
      </aside>
+
+</section>
+
  </main>
     <footer>
+      <h3 class="Emergency">  Emergency: <a href="tel:514-848-3717" style="font-weight: 200;">514-848-3717</a> |  Central: <a href="tel:514-848-2424" style="font-weight: 200;"> 514-848-2424</a></h3>
+      <br>
+      <div class="hours-info">
+      <h3 class="hours-title">Open Hours: <span class="hours-time" style="font-weight: 200;">10:00 AM – 9:00 PM Everyday</span></h3>
+    <br>
+    <h3 class="contact"> Contact: <a href="email:info@campusresource.edu" style="font-weight: 200;"> info@campusresource.edu</a></h3>
+   </div>
+<br>
+<br>
+<hr>
         <p>&copy; 2025-2026 Campus Resource Booking. All rights reserved.</p>
-        <p style="font-size: 0.9rem;">Contact: info@campusresource.edu | Phone: (514-848-2424)</p>
+        
     </footer>
+
+ <script src="js/navbar.js"></script>
 
 </body>
 </html>
