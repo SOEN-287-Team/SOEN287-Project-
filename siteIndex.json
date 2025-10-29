@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Home – Campus Resource",
+    "url": "index.html",
+    "content": "Reserve your group study room or computer workstation. Browse resources, view availability, book your spot now..."
+  },
+  {
+    "title": "Browse Resources",
+    "url": "browse-resources.html",
+    "content": "Group study rooms, computer workstations, filters, capacity, availability, location..."
+  },
+  {
+    "title": "Booking",
+    "url": "booking.html",
+    "content": "Create a reservation, select date and time, confirmation details, cancel or modify bookings..."
+  },
+  {
+    "title": "Profile",
+    "url": "profile.html",
+    "content": "User profile information, contact email, preferences, past reservations..."
+  },
+  {
+    "title": "Login",
+    "url": "login.html",
+    "content": "Login and logout pages for students and admins, authentication form..."
+  }
+]
