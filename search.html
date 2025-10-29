@@ -62,7 +62,7 @@
       const rx = new RegExp(escapeRegExp(q), "gi");
       return text.replace(rx, m => `<mark>${m}</mark>`);
     }
-    // basit skor: title tam eşleşme +5, başlıkta geçiş +3, gövdede her geçiş +1
+    
     function scoreDoc(doc, q){
       const qlc = q.toLowerCase();
       const title = (doc.title||"").toLowerCase();
@@ -74,7 +74,7 @@
       s += count;
       return s;
     }
-    // kısa snippet çıkar
+    
     function snippet(text, q){
       const idx = text.toLowerCase().indexOf(q.toLowerCase());
       if(idx === -1) return text.slice(0,140) + (text.length>140 ? "..." : "");
@@ -94,7 +94,7 @@
         return;
       }
 
-      // siteIndex.json aynı dizinde olmalı
+      
       let index = [];
       try{
         const res = await fetch("siteIndex.json", {cache:"no-store"});
@@ -104,7 +104,7 @@
         return;
       }
 
-      // filtrele, skorla, sırala
+      
       const filtered = index
         .map(doc => ({...doc, _score: scoreDoc(doc, q)}))
         .filter(d => d._score > 0);
