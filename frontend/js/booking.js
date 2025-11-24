@@ -48,6 +48,76 @@ async function loadBookingsForCurrentDate() {
   }
 }
 
+// Fetch resources and build table rows dynamically
+const timeSlots = ['10:00am','11:00am','12:00pm','1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm','8:00pm','9:00pm'];
+
+async function loadResourcesAndRenderTable() {
+  try {
+    const resp = await fetch('/api/resources');
+    if (!resp.ok) throw new Error('Failed to load resources');
+    const resources = await resp.json();
+
+    const tbody = document.querySelector('.availability-table tbody');
+    if (!tbody) return;
+
+    // Clear existing rows
+    tbody.innerHTML = '';
+
+    // Group resources by type simple mapping
+    const groups = {};
+    resources.forEach(r => {
+      const type = (r.type || r.category || 'other').toLowerCase();
+      const key = type.includes('room') ? 'study-rooms' : (type.includes('computer') || type.includes('work') || type.includes('equipment') ? 'equipment' : 'other');
+      if (!groups[key]) groups[key] = [];
+      groups[key].push(r);
+    });
+
+    // Helper to render a group
+    function renderGroup(headerHtmlClass, title, items) {
+      if (!items || items.length === 0) return;
+      const headerRow = document.createElement('tr');
+      headerRow.className = `category-header ${headerHtmlClass}`;
+      const td = document.createElement('td');
+      td.colSpan = 13;
+      td.innerHTML = `<h3>${title}</h3>`;
+      headerRow.appendChild(td);
+      tbody.appendChild(headerRow);
+
+      items.forEach(r => {
+        const tr = document.createElement('tr');
+        tr.className = headerHtmlClass === 'study-rooms-header' ? 'study-room-row' : 'equipment-row';
+        tr.setAttribute('data-category', headerHtmlClass === 'study-rooms-header' ? 'study-rooms' : 'equipment');
+
+        const nameTd = document.createElement('td');
+        nameTd.innerHTML = `<div class="resource-name"><span class="resource-icon">${(r.type||'').slice(0,2).toUpperCase()}</span> ${r.name}</div>`;
+        tr.appendChild(nameTd);
+
+        timeSlots.forEach(ts => {
+          const td = document.createElement('td');
+          const div = document.createElement('div');
+          div.className = 'time-slot available';
+          div.setAttribute('data-time', ts);
+          td.appendChild(div);
+          tr.appendChild(td);
+        });
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Render study rooms then equipment then others
+    renderGroup('study-rooms-header', '📚 Group Study Rooms', groups['study-rooms']);
+    renderGroup('equipment-header', '💻 Computer Workstations', groups['equipment']);
+    // render 'other' as generic
+    if (groups['other']) renderGroup('other-header', 'Other Resources', groups['other']);
+
+    // After resources rendered, load bookings to mark slots
+    await loadBookingsForCurrentDate();
+  } catch (err) {
+    console.error('Error loading resources', err);
+  }
+}
+
 function normalizeCellTime(cellTime) {
   // cellTime examples: "10:00am", "12:00pm", "1:00pm"
   const m = cellTime.toLowerCase().match(/(\d{1,2}):(\d{2})(am|pm)?/);
@@ -121,7 +191,7 @@ function renderBookings(bookings) {
 // Initialize
 updateDatePicker();
 updateDateDisplay();
-loadBookingsForCurrentDate();
+loadResourcesAndRenderTable();
 
 // Category Filter Function
 document.getElementById('categoryFilter').addEventListener('change', function() {
