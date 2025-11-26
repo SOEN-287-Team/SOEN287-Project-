@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Campus Resource</title>
+</head>
+
+<body>
+    <header>
+        <h2>Campus Resource</h2>
+    </header>
+    
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse-resources.html">Browse Resources</a></li>
+            <li><a href="booking.html">My Booking</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="login.html">Login/Logout</a></li>
+            <li>
+                <div class="nav-search">
+                  <form id="navSearchForm" action="search.html" method="GET">
+  <input id="navSearchInput" name="q" type="search" placeholder="Search…" />
+  <button type="submit">Search</button>
+                  </form>
+                </div>
+          </li>
+        </ul>
+    </nav>
+        <main>
+            <h2>Student</h2>
+            <br><br>
+            <div class="logindiv">
+                <form id="studentloginform">
+                    <label for="email">Student Email:</label>
+                    <input type="email" id="studentEmail" name="studentEmail" required> 
+                    <br><br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="studentPassword" name="studentPassword" required>
+                    <br><br>
+                    <button class="loginbutton" type="submit">Login</button>
+                </form>
+                <br><br>
+                <p class="promptsignup">Click <a href="student-signup.html">here</a> to sign up.</p>
+            </div> 
+            
+                </main>
+        <script src="js/student-login.js"></script>
+    </body>
+</html>

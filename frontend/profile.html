@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Campus Resource</title>
+</head>
+
+<body>
+    <header>
+        <h2>Campus Resource</h2>
+    </header>
+    
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse-resources.html">Browse Resources</a></li>
+            <li><a href="booking.html">My Booking</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="login.html">Login/Logout</a></li>
+            <li>
+                <div class="nav-search">
+                  <form id="navSearchForm" action="search.html" method="GET">
+  <input id="navSearchInput" name="q" type="search" placeholder="Search…" />
+  <button type="submit">Search</button>
+                  </form>
+                </div>
+          </li>
+        </ul>
+    </nav>
+
+        <main>
+        <div class="calendar-container">
+
+            
+           <!-- User info -->
+<div class="profile-section" id="profileBox">
+    <h3>My Profile</h3>
+
+    <div class="profile-row">
+        <strong>Name:</strong>
+        <span id="profileName"></span>
+    </div>
+
+    <div class="profile-row">
+        <strong>Email:</strong>
+        <span id="profileEmail"></span>
+    </div>
+
+    <div class="profile-row">
+        <strong>Student ID:</strong>
+        <span id="profileStudentId"></span>
+    </div>
+
+   
+    </div>
+</div>
+
+
+
+            <!-- Change password section -->
+            <div class="profile-section" style="margin-top: 30px;">
+                <h3>Change Password</h3>
+                <form>
+                    <div class="profile-row">
+                        <label for="currentPassword">Current Password:</label>
+                        <input type="password" id="currentPassword" placeholder="Enter current password">
+                    </div>
+                    <div class="profile-row">
+                        <label for="newPassword">New Password:</label>
+                        <input type="password" id="newPassword" placeholder="Enter new password">
+                    </div>
+                    <div class="profile-row">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirm new password">
+                    </div>
+                    <button type="submit" style="margin-top: 15px;">Update Password</button>
+                </form>
+            </div>
+
+            <!-- Booking summary -->
+            <div class="profile-section" style="margin-top: 30px;">
+                <h3>My Bookings</h3>
+                <table class="availability-table">
+                    <thead>
+                        <tr>
+                            <th>Space</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Study Room A - Library</td>
+                            <td>2025-10-16</td>
+                            <td>5:00pm - 7:00pm</td>
+                        </tr>
+                        <tr>
+                            <td>Study Room D - Library</td>
+                            <td>2025-10-16</td>
+                            <td>2:00pm - 4:00pm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Cancel booking section -->
+            <div class="profile-section" style="margin-top: 30px;">
+                <h3>Cancel a Booking</h3>
+                <form>
+                    <div class="profile-row">
+                        <label for="bookingSelect">Select Booking to Cancel:</label>
+                        <select id="bookingSelect">
+                            <option value="all">Show All</option>
+                            <option value="booking1">Study Room A - Library on 2025-10-16 at 5:00pm - 7:00pm</option>
+                            <option value="booking2">Study Room D - Library on 2025-10-16 at 2:00pm - 4:00pm</option>
+                        </select>
+                    </div>
+                    <button type="submit" style="margin-top: 15px;">Cancel Booking</button>
+                </form>
+            </div>
+
+            <!-- Delete account section -->
+            <div class="profile-section" style="margin-top: 30px;">
+                <h3>Delete Account</h3>
+                <form>
+                    <p>If you wish to delete your account, please click the button below. This action is irreversible.</p>
+                    <button style="background-color: rgb(221, 216, 216); color: rgb(243, 4, 4); margin-top: 10px;">Delete My Account</button>
+                </form>
+            </div>
+        </div>
+        </main>
+        <footer>
+      <h3 class="Emergency">  Emergency: <a href="tel:514-848-3717" style="font-weight: 200;">514-848-3717</a> |  Central: <a href="tel:514-848-2424" style="font-weight: 200;"> 514-848-2424</a></h3>
+      <br>
+      <div class="hours-info">
+      <h3 class="hours-title">Open Hours: <span class="hours-time" style="font-weight: 200;">10:00 AM – 9:00 PM Everyday</span></h3>
+    <br>
+    <h3 class="contact"> Contact: <a href="email:info@campusresource.edu" style="font-weight: 200;"> info@campusresource.edu</a></h3>
+   </div>
+<br>
+<br>
+<hr>
+        <p>&copy; 2025-2026 Campus Resource Booking. All rights reserved.</p>
+        
+    </footer>
+      
+      <script src="js/profile.js"></script>
+    </body>
+</html>
